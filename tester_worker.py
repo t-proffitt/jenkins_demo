@@ -1,12 +1,13 @@
 import unittest
-#import the function & specific variables
 from worker import add_numbers, NUM_1, NUM_2
 
 class TestWorker(unittest.TestCase):
     def test_dynamic_numbers(self):
-        #test automatically uses whatever numbers are set in worker.py
-        self.assertEqual(add_numbers(NUM_1, NUM_2), 15)
+        actual_sum = add_numbers(NUM_1, NUM_2)
+        
+        u_error = f"The required sum is 15. {actual_sum} is unacceptable. Self Destruct."
+        
+        self.assertEqual(actual_sum, 15, u_error)
         #sum of NUM_1 & NUM_2 should =15
-
 if __name__ == "__main__":
     unittest.main()
