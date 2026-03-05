@@ -1,10 +1,18 @@
 pipeline {
-    agent any
+    // We replaced 'agent any' with this specific block
+    agent {
+        docker { 
+            // This tells Podman to download a clean, isolated Python environment
+            image 'python:3.9-slim' 
+            
+            // This is often needed so Jenkins has permission to read/write inside the container
+            args '-u root'
+        }
+    }
 
     stages {
         stage('Checkout') {
             steps {
-                // This pulls the code from your GitHub repo
                 checkout scm
             }
         }
@@ -12,7 +20,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Preparing the environment...'
-                // You could install dependencies here: sh 'pip install -r requirements.txt'
                 sh 'python3 --version'
             }
         }
@@ -20,7 +27,6 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running Unit Tests...'
-                // This runs our test script
                 sh 'python3 tester_worker.py'
             }
         }
