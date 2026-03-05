@@ -1,7 +1,7 @@
 def add_numbers(a, b):
     return a + b
 
-NUM_1 = 65
+NUM_1 = 13
 NUM_2 = 2
 
 if __name__ == "__main__":
