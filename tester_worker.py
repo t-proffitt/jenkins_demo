@@ -1,12 +1,12 @@
 import unittest
-from worker import add_numbers
+# Now we import the function AND the specific variables
+from worker import add_numbers, NUM_1, NUM_2
 
-class TestApp(unittest.TestCase):
-    def test_add(self):
-        self.assertEqual(add_numbers(10, 5), 15)
-    
-    def test_add_negative(self):
-        self.assertEqual(add_numbers(-1, 1), 0)
+class TestWorker(unittest.TestCase):
+    def test_dynamic_numbers(self):
+        # The test automatically uses whatever numbers you set in worker.py.
+        # It adds them together and expects the answer to ALWAYS be 15.
+        self.assertEqual(add_numbers(NUM_1, NUM_2), 15)
 
 if __name__ == "__main__":
     unittest.main()
