@@ -3,7 +3,7 @@ def add_numbers(a, b):
 
 # We define the numbers here so the test script can "see" them
 NUM_1 = 13
-NUM_2 = 3
+NUM_2 = 2
 
 if __name__ == "__main__":
     # We use the variables here instead of hardcoding the numbers
