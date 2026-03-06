@@ -8,7 +8,7 @@ class TestWorker(unittest.TestCase):
         if actual_sum == 67:
             self.fail("Nice try. I see what you did there: https://www.google.com/search?q=67+meme")
         
-        u_error = f"The required sum is 15. {actual_sum} is unacceptable. Self Destruct."
+        u_error = f"The required sum is 15. {actual_sum} is unacceptable. Self destruct imminent."
         self.assertEqual(actual_sum, 15, u_error)
         #sum of NUM_1 & NUM_2 must =15
 
